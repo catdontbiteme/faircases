@@ -1,0 +1,40 @@
+name: Weekly heat data refresh
+
+on:
+  schedule:
+    # Mondays 03:00 UTC (Mon 11:00 in Taiwan)
+    - cron: "0 3 * * 1"
+  workflow_dispatch: # allow manual trigger
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - run: npm ci
+
+      - name: Fetch Google Trends + PTT
+        run: npm run fetch-data
+        env:
+          NODE_OPTIONS: --no-warnings
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ -n "$(git status --porcelain data/trends)" ]; then
+            git add data/trends
+            git commit -m "chore(data): weekly heat refresh"
+            git push
+          else
+            echo "No data changes."
+          fi

@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    color-scheme: light;
+  }
+  body {
+    @apply bg-paper text-ink font-sans antialiased;
+  }
+  h1, h2, h3, h4 {
+    @apply font-serif tracking-tight;
+  }
+  a {
+    @apply underline-offset-4 hover:underline;
+  }
+}
+
+@layer components {
+  .container-prose {
+    @apply mx-auto w-full max-w-3xl px-5;
+  }
+  .rule-top {
+    @apply border-t border-rule;
+  }
+  .pill {
+    @apply inline-flex items-center gap-1 rounded-full border border-rule bg-white px-2.5 py-0.5 text-xs;
+  }
+}

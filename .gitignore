@@ -1,0 +1,18 @@
+node_modules
+.next
+out
+.env
+.env.local
+.env*.local
+.DS_Store
+Thumbs.db
+*.tsbuildinfo
+next-env.d.ts
+
+# raw ChatGPT image source (replaceable, not needed at runtime)
+/01/
+
+# editor / IDE
+.vscode
+.idea
+*.swp
