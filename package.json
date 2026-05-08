@@ -9,7 +9,7 @@
     "lint": "next lint",
     "lint:cases": "node scripts/lint-cases.mjs",
     "new-case": "node scripts/new-case.mjs",
-    "fetch-data": "node scripts/fetch-trends.mjs && node scripts/fetch-ptt.mjs"
+    "fetch-data": "node scripts/fetch-trends.mjs && node scripts/fetch-ptt.mjs && node scripts/fetch-news.mjs"
   },
   "dependencies": {
     "fuse.js": "^7.0.0",

@@ -45,6 +45,14 @@ export function HeatCurve({ data }: { data: HeatPoint[] }) {
             strokeWidth={2}
             dot={false}
           />
+          <Line
+            type="monotone"
+            dataKey="news"
+            name="新聞報導"
+            stroke="#0369a1"
+            strokeWidth={2}
+            dot={false}
+          />
         </LineChart>
       </ResponsiveContainer>
     </div>

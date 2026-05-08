@@ -3,7 +3,12 @@ import path from "node:path";
 import { STATUS_OPEN } from "./labels";
 import type { CaseRecord } from "./cases";
 
-export type HeatPoint = { date: string; trends?: number; ptt?: number };
+export type HeatPoint = {
+  date: string;
+  trends?: number;
+  ptt?: number;
+  news?: number;
+};
 
 export type CoolnessLevel = "hot" | "warm" | "cold" | "alert";
 
@@ -31,7 +36,9 @@ export function loadHeatSeries(slug: string): HeatPoint[] {
   }
 }
 
-function maxOf(series: HeatPoint[], key: "trends" | "ptt"): number {
+type HeatKey = "trends" | "ptt" | "news";
+
+function maxOf(series: HeatPoint[], key: HeatKey): number {
   let m = 0;
   for (const p of series) {
     const v = p[key] ?? 0;
@@ -42,7 +49,7 @@ function maxOf(series: HeatPoint[], key: "trends" | "ptt"): number {
 
 function recentAverage(
   series: HeatPoint[],
-  key: "trends" | "ptt",
+  key: HeatKey,
   days = COOLNESS_RECENT_DAYS
 ): number {
   if (series.length === 0) return 0;
@@ -54,12 +61,16 @@ function recentAverage(
 }
 
 export function computeCoolness(c: CaseRecord, series: HeatPoint[]): Coolness {
-  const peak = Math.max(maxOf(series, "trends"), maxOf(series, "ptt"));
-  const recent = Math.max(
-    recentAverage(series, "trends"),
-    recentAverage(series, "ptt")
-  );
-  const ratio = peak > 0 ? recent / peak : 0;
+  // Per-signal ratio: each signal compares its own recent average to its own peak,
+  // then we take the max — so if media stopped covering AND PTT stopped discussing,
+  // the case correctly reads as cold even when one signal is missing.
+  const ratios: number[] = [];
+  for (const k of ["trends", "ptt", "news"] as const) {
+    const peak = maxOf(series, k);
+    if (peak === 0) continue;
+    ratios.push(recentAverage(series, k) / peak);
+  }
+  const ratio = ratios.length === 0 ? 0 : Math.max(...ratios);
   const isOpen = STATUS_OPEN[c.status];
 
   if (ratio >= COOLNESS_HOT_THRESHOLD) {

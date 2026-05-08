@@ -36,7 +36,8 @@ export function HeatFormulaInfo() {
           </li>
         </ul>
         <p className="mt-3 text-xs text-muted">
-          資料來源：Google Trends（地區=台灣）+ PTT 八卦版提及次數，每週聚合。每週由
+          資料來源：Google Trends（地區=台灣）+ PTT 八卦版提及次數 +
+          Google News 主流媒體加權報導頻率，每週聚合。三條線取最高比值決定退燒等級。每週由
           GitHub Actions 自動更新。
         </p>
       </div>
