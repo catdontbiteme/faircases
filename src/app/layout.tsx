@@ -33,6 +33,9 @@ export const metadata: Metadata = {
     images: ["/hero.png"],
   },
   robots: { index: true, follow: true },
+  verification: {
+    google: "44srMm-jZU1De1_DHrjS_WBo5v8w9IkJXZYwemdjodA",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
