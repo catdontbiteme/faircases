@@ -1,155 +1,251 @@
 [
   {
+    "date": "2025-05-12",
+    "trends": 100
+  },
+  {
     "date": "2025-05-19",
     "ptt": 513,
-    "news": 130
+    "news": 132,
+    "trends": 11
   },
   {
     "date": "2025-05-26",
     "ptt": 113,
-    "news": 9
+    "news": 9,
+    "trends": 4
   },
   {
     "date": "2025-06-02",
-    "ptt": 33
+    "ptt": 33,
+    "trends": 2
   },
   {
     "date": "2025-06-09",
     "ptt": 6,
-    "news": 2
+    "news": 2,
+    "trends": 1
   },
   {
     "date": "2025-06-16",
     "ptt": 1,
-    "news": 1
+    "news": 1,
+    "trends": 1
   },
   {
     "date": "2025-06-23",
-    "ptt": 12
+    "ptt": 12,
+    "trends": 1
   },
   {
     "date": "2025-06-30",
-    "ptt": 4
+    "ptt": 4,
+    "trends": 0
   },
   {
     "date": "2025-07-07",
-    "ptt": 2
+    "ptt": 2,
+    "trends": 1
   },
   {
     "date": "2025-07-14",
     "ptt": 7,
-    "news": 8
+    "news": 8,
+    "trends": 0
   },
   {
     "date": "2025-07-21",
-    "ptt": 5
+    "ptt": 5,
+    "trends": 0
   },
   {
     "date": "2025-07-28",
-    "ptt": 2
+    "ptt": 2,
+    "trends": 0
+  },
+  {
+    "date": "2025-08-04",
+    "trends": 0
   },
   {
     "date": "2025-08-11",
-    "ptt": 1
+    "ptt": 1,
+    "trends": 0
   },
   {
     "date": "2025-08-18",
-    "ptt": 1
+    "ptt": 1,
+    "trends": 0
   },
   {
     "date": "2025-08-25",
-    "ptt": 1
+    "ptt": 1,
+    "trends": 0
   },
   {
     "date": "2025-09-01",
     "ptt": 3,
-    "news": 1
+    "news": 1,
+    "trends": 0
+  },
+  {
+    "date": "2025-09-08",
+    "trends": 0
+  },
+  {
+    "date": "2025-09-15",
+    "trends": 0
   },
   {
     "date": "2025-09-22",
-    "ptt": 6
+    "ptt": 6,
+    "trends": 0
   },
   {
     "date": "2025-09-29",
     "ptt": 1,
-    "news": 4
+    "news": 4,
+    "trends": 0
   },
   {
     "date": "2025-10-06",
-    "ptt": 4
+    "ptt": 4,
+    "trends": 0
+  },
+  {
+    "date": "2025-10-13",
+    "trends": 0
   },
   {
     "date": "2025-10-20",
-    "ptt": 2
+    "ptt": 2,
+    "trends": 0
+  },
+  {
+    "date": "2025-10-27",
+    "trends": 0
+  },
+  {
+    "date": "2025-11-03",
+    "trends": 0
+  },
+  {
+    "date": "2025-11-10",
+    "trends": 0
   },
   {
     "date": "2025-11-17",
-    "news": 1
+    "news": 1,
+    "trends": 0
+  },
+  {
+    "date": "2025-11-24",
+    "trends": 0
+  },
+  {
+    "date": "2025-12-01",
+    "trends": 0
   },
   {
     "date": "2025-12-08",
-    "ptt": 3
+    "ptt": 3,
+    "trends": 0
   },
   {
     "date": "2025-12-15",
-    "ptt": 10
+    "ptt": 10,
+    "trends": 0
   },
   {
     "date": "2025-12-22",
-    "ptt": 1
+    "ptt": 1,
+    "trends": 0
   },
   {
     "date": "2025-12-29",
     "ptt": 3,
-    "news": 1
+    "news": 1,
+    "trends": 0
   },
   {
     "date": "2026-01-05",
-    "ptt": 2
+    "ptt": 2,
+    "trends": 0
   },
   {
     "date": "2026-01-12",
-    "ptt": 4
+    "ptt": 4,
+    "trends": 0
+  },
+  {
+    "date": "2026-01-19",
+    "trends": 0
   },
   {
     "date": "2026-01-26",
-    "ptt": 1
+    "ptt": 1,
+    "trends": 0
+  },
+  {
+    "date": "2026-02-02",
+    "trends": 0
   },
   {
     "date": "2026-02-09",
-    "ptt": 1
+    "ptt": 1,
+    "trends": 0
   },
   {
     "date": "2026-02-16",
-    "ptt": 5
+    "ptt": 5,
+    "trends": 0
   },
   {
     "date": "2026-02-23",
-    "ptt": 3
+    "ptt": 3,
+    "trends": 0
   },
   {
     "date": "2026-03-02",
-    "ptt": 1
+    "ptt": 1,
+    "trends": 0
   },
   {
     "date": "2026-03-09",
-    "ptt": 2
+    "ptt": 2,
+    "trends": 0
+  },
+  {
+    "date": "2026-03-16",
+    "trends": 0
   },
   {
     "date": "2026-03-23",
-    "ptt": 1
+    "ptt": 1,
+    "trends": 0
   },
   {
     "date": "2026-03-30",
-    "ptt": 4
+    "ptt": 4,
+    "trends": 0
+  },
+  {
+    "date": "2026-04-06",
+    "trends": 0
+  },
+  {
+    "date": "2026-04-13",
+    "trends": 0
   },
   {
     "date": "2026-04-20",
-    "news": 1
+    "news": 1,
+    "trends": 0
   },
   {
     "date": "2026-04-27",
-    "ptt": 2
+    "ptt": 2,
+    "trends": 0
   },
   {
     "date": "2026-05-04",
