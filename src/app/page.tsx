@@ -48,11 +48,9 @@ export default function HomePage() {
             alt=""
             width={1600}
             height={900}
-            className="h-56 w-full object-cover md:h-80"
+            className="h-56 w-full object-cover brightness-[1.15] contrast-[1.05] md:h-80"
             priority
           />
-          {/* gradient bottom-fade so hero blends into page bg */}
-          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-b from-transparent to-paper" />
         </div>
         <h1 className="font-serif text-3xl font-semibold leading-tight md:text-4xl">
           誰還記得他們？
