@@ -3,6 +3,7 @@ import type { CaseCategory, CaseStatus } from "./cases";
 export const CATEGORY_LABEL: Record<CaseCategory, string> = {
   "violent-crime": "暴力犯罪",
   "police-line-of-duty": "警消殉職",
+  "drunk-driving": "酒駕致死",
   bullying: "霸凌",
   "data-leak": "個資外洩",
   other: "其他",

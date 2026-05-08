@@ -15,6 +15,7 @@ const COOLNESS_LABEL: Record<CoolnessLevel, string> = {
 const CATEGORIES: CaseCategory[] = [
   "violent-crime",
   "police-line-of-duty",
+  "drunk-driving",
   "bullying",
   "data-leak",
   "other",

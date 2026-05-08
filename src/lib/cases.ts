@@ -12,6 +12,7 @@ export type CaseStatus =
 export type CaseCategory =
   | "violent-crime"
   | "police-line-of-duty"
+  | "drunk-driving"
   | "bullying"
   | "data-leak"
   | "other";
