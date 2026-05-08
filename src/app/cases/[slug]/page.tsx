@@ -98,6 +98,52 @@ export default async function CasePage({
         </section>
       )}
 
+      {c.controversies && c.controversies.length > 0 && (
+        <section className="mt-10">
+          <h2 className="font-serif text-lg font-semibold">爭議焦點</h2>
+          <p className="mt-1 text-xs text-muted">
+            根據引用報導整理出的輿論討論點，本站不對任一立場下判斷。
+          </p>
+          <ol className="mt-4 space-y-3">
+            {c.controversies.map((co, i) => (
+              <li
+                key={i}
+                className="rounded-md border-l-2 border-accent bg-white px-4 py-3"
+              >
+                <h3 className="text-sm font-semibold text-ink">
+                  {i + 1}. {co.point}
+                </h3>
+                <p className="mt-1 text-sm leading-relaxed text-ink/80">
+                  {co.detail}
+                </p>
+              </li>
+            ))}
+          </ol>
+        </section>
+      )}
+
+      {c.notes && c.notes.length > 0 && (
+        <section className="mt-10">
+          <h2 className="font-serif text-lg font-semibold">附註：相關疑雲</h2>
+          <p className="mt-1 text-xs text-muted">
+            以下事件與本案有關但**非主時間軸**，僅紀錄輿論討論軌跡。
+          </p>
+          <div className="mt-4 space-y-4">
+            {c.notes.map((n, i) => (
+              <div
+                key={i}
+                className="rounded-md border border-rule bg-white p-4"
+              >
+                <h3 className="text-sm font-semibold text-ink">{n.title}</h3>
+                <p className="mt-1.5 text-sm leading-relaxed text-ink/80">
+                  {n.body}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
       {c.body.trim() && (
         <section className="prose-content mt-10 leading-relaxed">
           <MDXRemote source={c.body} />

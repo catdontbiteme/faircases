@@ -2,6 +2,11 @@
 
 每次新增案件前，掃一遍這份清單。
 
+> **想用 AI 助手加速？** 看 [AI_DRAFTING_GUIDE.md](AI_DRAFTING_GUIDE.md)。
+> 流程：跟 Claude Code 說「幫我建 XX 案件」→ AI 自動搜資料、寫草稿 →
+> **你親自看過**、修措辭、再 push。AI 寫，但你定稿、你負法律責任。
+
+
 ## 5 分鐘流程
 
 ```bash

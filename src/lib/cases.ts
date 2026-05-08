@@ -29,6 +29,18 @@ export type CaseTimelineEntry = {
   sourceUrl?: string;
 };
 
+export type CaseNote = {
+  title: string;
+  body: string;
+};
+
+export type CaseControversy = {
+  /** Short label of the disputed point. */
+  point: string;
+  /** Neutral one-line description of what's being argued. */
+  detail: string;
+};
+
 export type CaseFrontmatter = {
   slug: string;
   title: string;
@@ -43,6 +55,10 @@ export type CaseFrontmatter = {
   trendsKeyword: string;
   pttKeyword: string;
   lastUpdated: string;
+  /** Optional sidebar items: related events / media spinoffs, not part of the main case timeline. */
+  notes?: CaseNote[];
+  /** Optional list of disputed points extracted from coverage — neutral framing, no judgment. */
+  controversies?: CaseControversy[];
 };
 
 export type CaseRecord = CaseFrontmatter & {
