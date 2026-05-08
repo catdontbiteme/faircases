@@ -162,4 +162,4 @@ for (const file of files) {
 }
 
 console.log(`[fetch-ptt] done. ok=${ok} fail=${fail}`);
-if (fail > 0) process.exit(1);
+// partial-fail OK: keep going so the rest of the data pipeline (news) still runs.
