@@ -1,20 +1,36 @@
 import Image from "next/image";
 import { Suspense } from "react";
 import { CaseList } from "@/components/CaseList";
+import { ForgottenRanking } from "@/components/ForgottenRanking";
 import { HeatFormulaInfo } from "@/components/HeatFormulaInfo";
 import { getAllCases } from "@/lib/cases";
 import {
   COOLNESS_SORT_ORDER,
   computeCoolness,
+  computeForgottenScore,
   loadHeatSeries,
 } from "@/lib/coolness";
+
+const FORGOTTEN_TOP_N = 5;
 
 export default function HomePage() {
   const cases = getAllCases();
   const enriched = cases.map((c) => {
     const series = loadHeatSeries(c.slug);
-    return { c, coolness: computeCoolness(c, series) };
+    return {
+      c,
+      coolness: computeCoolness(c, series),
+      score: computeForgottenScore(c, series),
+    };
   });
+
+  // Top forgotten: positive score only, sorted desc, limited to N
+  const forgotten = [...enriched]
+    .filter((e) => e.score > 0)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, FORGOTTEN_TOP_N);
+
+  // Main grid: existing coolness sort
   enriched.sort((a, b) => {
     const order =
       COOLNESS_SORT_ORDER[a.coolness.level] -
@@ -43,6 +59,8 @@ export default function HomePage() {
           台灣社會案件的後續進度與公眾關注熱度。整理公開報導，僅做事實時間軸與熱度趨勢，不下定論。
         </p>
       </section>
+
+      <ForgottenRanking entries={forgotten} />
 
       <HeatFormulaInfo />
 

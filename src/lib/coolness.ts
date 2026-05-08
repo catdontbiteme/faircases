@@ -115,3 +115,35 @@ export const COOLNESS_SORT_ORDER: Record<CoolnessLevel, number> = {
   warm: 2,
   cold: 3,
 };
+
+/**
+ * "Forgotten score" — quantifies how much a once-hot but unresolved case has
+ * fallen off the public radar. Higher = more forgotten.
+ *
+ *   score = peakHeat × (1 - currentRatio) × isOpen
+ *
+ * - peakHeat: max signal value across trends/ptt/news (was once how big a deal)
+ * - 1 - currentRatio: how far off recent attention has fallen from the peak
+ * - isOpen: 0 if case is already sentenced/closed (only unresolved cases count)
+ *
+ * Returns 0 for any closed case or any case without enough data.
+ */
+export function computeForgottenScore(
+  c: CaseRecord,
+  series: HeatPoint[]
+): number {
+  if (!STATUS_OPEN[c.status]) return 0;
+
+  let peak = 0;
+  let recentForPeak = 0;
+  for (const k of ["trends", "ptt", "news"] as const) {
+    const p = maxOf(series, k);
+    if (p > peak) {
+      peak = p;
+      recentForPeak = recentAverage(series, k);
+    }
+  }
+  if (peak === 0) return 0;
+  const ratio = recentForPeak / peak;
+  return peak * (1 - ratio);
+}
