@@ -53,7 +53,7 @@ export default function HomePage() {
           />
         </div>
         <h1 className="font-serif text-3xl font-semibold leading-tight md:text-4xl">
-          那件事，後來怎麼了？
+          誰還記得他們？
         </h1>
         <p className="mt-3 max-w-2xl text-base leading-relaxed text-ink/80">
           台灣社會案件的後續進度與公眾關注熱度。整理公開報導，僅做事實時間軸與熱度趨勢，不下定論。

@@ -15,7 +15,7 @@ export default function AboutPage() {
       <section className="mt-6">
         <h2 className="font-serif text-xl font-semibold">為什麼做這個</h2>
         <p className="mt-3">
-          台灣常爆出令人痛心的社會案件，新聞熱度退燒後，後續進度卻乏人追蹤。本站整理已公開報導，提供「事件時間軸」與「公眾關注熱度」兩個維度，讓讀者能快速回到那件事的當下，並看到後來怎麼了。
+          台灣常爆出令人痛心的社會案件，新聞熱度退燒後，後續進度卻乏人追蹤。本站整理已公開報導，提供「事件時間軸」與「公眾關注熱度」兩個維度，讓這些人不被遺忘，讓那些事繼續被看見。
         </p>
       </section>
 
