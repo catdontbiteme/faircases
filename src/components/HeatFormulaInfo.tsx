@@ -8,8 +8,8 @@ const pct = (n: number) => `${Math.round(n * 100)}%`;
 
 export function HeatFormulaInfo() {
   return (
-    <details className="group mb-8 rounded-md border border-rule bg-white">
-      <summary className="cursor-pointer list-none px-4 py-3 text-sm font-medium text-ink/85 hover:bg-paper">
+    <details className="group mb-8 rounded-md border border-rule bg-surface">
+      <summary className="cursor-pointer list-none px-4 py-3 text-sm font-medium text-ink/85 hover:bg-surfaceHi">
         <span className="mr-2 text-muted">＋</span>
         熱度退燒指標怎麼算？
       </summary>

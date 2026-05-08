@@ -108,7 +108,7 @@ export default async function CasePage({
             {c.controversies.map((co, i) => (
               <li
                 key={i}
-                className="rounded-md border-l-2 border-accent bg-white px-4 py-3"
+                className="rounded-md border-l-2 border-accent bg-surface px-4 py-3"
               >
                 <h3 className="text-sm font-semibold text-ink">
                   {i + 1}. {co.point}
@@ -132,7 +132,7 @@ export default async function CasePage({
             {c.notes.map((n, i) => (
               <div
                 key={i}
-                className="rounded-md border border-rule bg-white p-4"
+                className="rounded-md border border-rule bg-surface p-4"
               >
                 <h3 className="text-sm font-semibold text-ink">{n.title}</h3>
                 <p className="mt-1.5 text-sm leading-relaxed text-ink/80">
@@ -173,7 +173,7 @@ export default async function CasePage({
 
       <ShareButtons slug={c.slug} title={c.shortTitle} />
 
-      <aside className="mt-8 rounded-md border border-rule bg-white p-4 text-xs leading-relaxed text-muted">
+      <aside className="mt-8 rounded-md border border-rule bg-surface p-4 text-xs leading-relaxed text-muted">
         <strong className="text-ink">本頁聲明：</strong>
         本案件條目僅整理已公開報導，不對事實作獨立認定。當事人以代稱描述，未滿
         18 歲者不揭露足以辨識身分之資訊（兒少法第 69 條）。

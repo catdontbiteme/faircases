@@ -42,7 +42,7 @@ export default function HomePage() {
   return (
     <div className="container-prose py-10">
       <section className="mb-8">
-        <div className="relative mb-6 overflow-hidden rounded-lg border border-rule bg-black">
+        <div className="relative mb-8 -mx-5 overflow-hidden md:mx-0 md:rounded-md">
           <Image
             src="/hero.png"
             alt=""
@@ -51,6 +51,8 @@ export default function HomePage() {
             className="h-56 w-full object-cover md:h-80"
             priority
           />
+          {/* gradient bottom-fade so hero blends into page bg */}
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-b from-transparent to-paper" />
         </div>
         <h1 className="font-serif text-3xl font-semibold leading-tight md:text-4xl">
           誰還記得他們？

@@ -79,7 +79,7 @@ export function CaseFilters({ years, hasAnyFilter }: Props) {
         <button
           type="button"
           onClick={clearAll}
-          className="ml-1 rounded-md border border-rule bg-white px-3 py-1.5 text-sm text-muted hover:border-ink hover:text-ink"
+          className="ml-1 rounded-md border border-rule bg-surface px-3 py-1.5 text-sm text-muted hover:border-ink hover:text-ink"
         >
           清除篩選
         </button>
@@ -100,7 +100,7 @@ function Select({
   options: { value: string; label: string }[];
 }) {
   return (
-    <label className="inline-flex items-center gap-1 rounded-md border border-rule bg-white pl-3 pr-1 text-sm">
+    <label className="inline-flex items-center gap-1 rounded-md border border-rule bg-surface pl-3 pr-1 text-sm">
       <span className="text-muted">{label}</span>
       <select
         value={value}

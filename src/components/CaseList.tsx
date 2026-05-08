@@ -42,8 +42,8 @@ export function CaseList({ enriched }: Props) {
   return (
     <>
       {alertCount > 0 && (
-        <p className="mb-6 inline-block rounded-md border border-orange-300 bg-orange-50 px-3 py-2 text-sm text-orange-900">
-          ⚠️ 有 <strong>{alertCount}</strong>{" "}
+        <p className="mb-6 inline-block rounded-md border-l-2 border-accent bg-surface px-3 py-2 text-sm text-ink/85">
+          ⚠ 有 <strong className="text-accent">{alertCount}</strong>{" "}
           件「冷案警報」：已被輿論遺忘但案件未結。
         </p>
       )}
@@ -51,7 +51,7 @@ export function CaseList({ enriched }: Props) {
       <CaseFilters years={years} hasAnyFilter={hasAnyFilter} />
 
       {filtered.length === 0 ? (
-        <p className="rounded-md border border-dashed border-rule bg-white p-8 text-center text-muted">
+        <p className="rounded-md border border-dashed border-rule bg-surface p-8 text-center text-muted">
           {hasAnyFilter ? "沒有符合篩選條件的案件。" : "目前尚無案件條目。"}
         </p>
       ) : (

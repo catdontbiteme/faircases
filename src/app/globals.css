@@ -4,16 +4,32 @@
 
 @layer base {
   html {
-    color-scheme: light;
+    color-scheme: dark;
   }
   body {
     @apply bg-paper text-ink font-sans antialiased;
+    /* slight letter-spacing for a quieter, weightier feel */
+    letter-spacing: 0.01em;
   }
-  h1, h2, h3, h4 {
+  h1,
+  h2,
+  h3,
+  h4 {
     @apply font-serif tracking-tight;
+    /* serif headings get a touch more breathing room above */
+    letter-spacing: 0.005em;
+  }
+  /* paragraph leading slightly looser to feel calmer */
+  p {
+    line-height: 1.75;
   }
   a {
     @apply underline-offset-4 hover:underline;
+  }
+  /* native select / option on dark bg */
+  select,
+  option {
+    @apply bg-surface text-ink;
   }
 }
 
@@ -24,7 +40,12 @@
   .rule-top {
     @apply border-t border-rule;
   }
+  /* Pills now read as outlined chips on dark surface — readable but not loud */
   .pill {
-    @apply inline-flex items-center gap-1 rounded-full border border-rule bg-white px-2.5 py-0.5 text-xs;
+    @apply inline-flex items-center gap-1 rounded-full border border-rule bg-transparent px-2.5 py-0.5 text-xs text-ink/80;
+  }
+  /* Card surface used by CaseCard, ranking, etc. */
+  .card-surface {
+    @apply rounded-lg border border-rule bg-surface;
   }
 }

@@ -1,10 +1,12 @@
 import type { Coolness } from "@/lib/coolness";
 
+// Dark-mode badge palette: low-saturation borders, transparent fill,
+// readable text. We avoid solid bg colors to keep the funereal tone.
 const COLOR: Record<Coolness["level"], string> = {
-  hot: "border-red-300 bg-red-50 text-red-800",
-  warm: "border-amber-300 bg-amber-50 text-amber-800",
-  cold: "border-slate-300 bg-slate-50 text-slate-700",
-  alert: "border-orange-400 bg-orange-50 text-orange-900",
+  hot: "border-red-700/60 text-red-300",
+  warm: "border-amber-700/60 text-amber-300",
+  cold: "border-slate-600/60 text-slate-400",
+  alert: "border-accent text-accent",
 };
 
 export function CoolnessBadge({ coolness }: { coolness: Coolness }) {

@@ -16,7 +16,7 @@ export function CaseCard({
   return (
     <Link
       href={`/cases/${c.slug}`}
-      className="group block rounded-lg border border-rule bg-white p-5 no-underline transition hover:border-ink"
+      className="card-surface group block p-5 no-underline transition hover:border-ink/40 hover:bg-surfaceHi"
     >
       <div className="flex items-start justify-between gap-3">
         <div className="flex flex-wrap items-center gap-2">
@@ -26,7 +26,7 @@ export function CaseCard({
               alt=""
               width={14}
               height={14}
-              className="opacity-80"
+              className="opacity-70 invert"
             />
             {CATEGORY_LABEL[c.category]}
           </span>
@@ -34,10 +34,10 @@ export function CaseCard({
         </div>
         <CoolnessBadge coolness={coolness} />
       </div>
-      <h2 className="mt-3 font-serif text-lg font-semibold leading-snug group-hover:underline">
+      <h2 className="mt-3 font-serif text-lg font-semibold leading-snug text-ink group-hover:underline">
         {c.shortTitle}
       </h2>
-      <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-ink/80">
+      <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-ink/70">
         {c.summary}
       </p>
       <div className="mt-4 flex items-center justify-between text-xs text-muted">
