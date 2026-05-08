@@ -45,7 +45,7 @@ export default async function CasePage({
   const coolness = computeCoolness(c, series);
 
   return (
-    <article className="container-prose py-10">
+    <article className="container-reading py-10">
       <header>
         <div className="flex flex-wrap items-center gap-2">
           <span className="pill">

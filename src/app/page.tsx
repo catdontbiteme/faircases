@@ -40,33 +40,39 @@ export default function HomePage() {
   });
 
   return (
-    <div className="container-prose py-10">
-      <section className="mb-8">
-        <div className="relative mb-8 -mx-5 overflow-hidden md:mx-0 md:rounded-md">
-          <Image
-            src="/hero.png"
-            alt=""
-            width={1600}
-            height={900}
-            className="h-56 w-full object-cover brightness-[1.15] contrast-[1.05] md:h-80"
-            priority
-          />
-        </div>
-        <h1 className="font-serif text-3xl font-semibold leading-tight md:text-4xl">
-          誰還記得他們？
-        </h1>
-        <p className="mt-3 max-w-2xl text-base leading-relaxed text-ink/80">
-          台灣社會案件的後續進度與公眾關注熱度。整理公開報導，僅做事實時間軸與熱度趨勢，不下定論。
-        </p>
+    <>
+      {/* Full-bleed hero — outside the prose container so it spans viewport edges */}
+      <section className="relative w-full overflow-hidden">
+        <Image
+          src="/hero.png"
+          alt=""
+          width={2400}
+          height={1000}
+          className="h-64 w-full object-cover brightness-[1.15] contrast-[1.05] md:h-[28rem] lg:h-[32rem]"
+          priority
+        />
+        {/* gentle vignette so the hero anchors visually instead of feeling like a stock photo */}
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_55%,rgba(20,23,26,0.55)_100%)]" />
       </section>
 
-      <ForgottenRanking entries={forgotten} />
+      <div className="container-prose py-10">
+        <section className="mb-10">
+          <h1 className="font-serif text-3xl font-semibold leading-tight md:text-4xl lg:text-5xl">
+            誰還記得他們？
+          </h1>
+          <p className="mt-3 max-w-2xl text-base leading-relaxed text-ink/80">
+            台灣社會案件的後續進度與公眾關注熱度。整理公開報導，僅做事實時間軸與熱度趨勢，不下定論。
+          </p>
+        </section>
 
-      <HeatFormulaInfo />
+        <ForgottenRanking entries={forgotten} />
 
-      <Suspense fallback={null}>
-        <CaseList enriched={enriched} />
-      </Suspense>
-    </div>
+        <HeatFormulaInfo />
+
+        <Suspense fallback={null}>
+          <CaseList enriched={enriched} />
+        </Suspense>
+      </div>
+    </>
   );
 }

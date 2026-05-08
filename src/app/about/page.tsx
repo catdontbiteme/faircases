@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <article className="container-prose py-10 leading-relaxed">
+    <article className="container-reading py-10 leading-relaxed">
       <h1 className="font-serif text-3xl font-semibold leading-tight md:text-4xl">
         關於本站
       </h1>

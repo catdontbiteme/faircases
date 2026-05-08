@@ -35,6 +35,10 @@
 
 @layer components {
   .container-prose {
+    @apply mx-auto w-full max-w-5xl px-5;
+  }
+  /* Narrow reading column for body copy on case pages, about, etc. */
+  .container-reading {
     @apply mx-auto w-full max-w-3xl px-5;
   }
   .rule-top {
