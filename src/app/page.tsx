@@ -41,14 +41,16 @@ export default function HomePage() {
 
   return (
     <>
-      {/* Full-bleed hero — outside the prose container so it spans viewport edges */}
-      <section className="relative w-full overflow-hidden">
+      {/* Full-bleed hero — preserves original 16:9 so the candle/light isn't cropped.
+          Max-w cap stops the image from getting absurdly tall on ultra-wide screens
+          (1280px wide → ~720px tall, the natural image size). */}
+      <section className="relative mx-auto w-full max-w-[1280px]">
         <Image
           src="/hero.png"
           alt=""
-          width={2400}
-          height={1000}
-          className="h-64 w-full object-cover brightness-[1.15] contrast-[1.05] md:h-[28rem] lg:h-[32rem]"
+          width={1600}
+          height={900}
+          className="aspect-[16/9] w-full object-contain brightness-[1.15] contrast-[1.05]"
           priority
         />
         {/* gentle vignette so the hero anchors visually instead of feeling like a stock photo */}
