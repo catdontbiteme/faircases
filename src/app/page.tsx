@@ -1,17 +1,17 @@
 import Image from "next/image";
 import { Suspense } from "react";
+import {
+  AttentionCompareChart,
+  type CompareSeries,
+} from "@/components/AttentionCompareChart";
 import { CaseList } from "@/components/CaseList";
-import { ForgottenRanking } from "@/components/ForgottenRanking";
 import { HeatFormulaInfo } from "@/components/HeatFormulaInfo";
 import { getAllCases } from "@/lib/cases";
 import {
   COOLNESS_SORT_ORDER,
   computeCoolness,
-  computeForgottenScore,
   loadHeatSeries,
 } from "@/lib/coolness";
-
-const FORGOTTEN_TOP_N = 5;
 
 export default function HomePage() {
   const cases = getAllCases();
@@ -20,15 +20,20 @@ export default function HomePage() {
     return {
       c,
       coolness: computeCoolness(c, series),
-      score: computeForgottenScore(c, series),
+      series,
     };
   });
 
-  // Top forgotten: positive score only, sorted desc, limited to N
-  const forgotten = [...enriched]
-    .filter((e) => e.score > 0)
-    .sort((a, b) => b.score - a.score)
-    .slice(0, FORGOTTEN_TOP_N);
+  // Build compare-chart input from `news` signal (most stable, all 5 cases covered)
+  const compareSeries: CompareSeries[] = enriched
+    .map(({ c, series }) => ({
+      slug: c.slug,
+      shortTitle: c.shortTitle,
+      weekly: series
+        .filter((p) => typeof p.news === "number")
+        .map((p) => ({ date: p.date, value: p.news as number })),
+    }))
+    .filter((s) => s.weekly.length > 0);
 
   // Main grid: existing coolness sort
   enriched.sort((a, b) => {
@@ -67,7 +72,7 @@ export default function HomePage() {
           </p>
         </section>
 
-        <ForgottenRanking entries={forgotten} />
+        <AttentionCompareChart series={compareSeries} />
 
         <HeatFormulaInfo />
 
