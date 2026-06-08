@@ -2,14 +2,14 @@
   {
     "date": "2026-04-27",
     "ptt": 154,
-    "news": 7,
-    "trends": 40
+    "news": 37,
+    "trends": 41
   },
   {
     "date": "2026-05-04",
     "ptt": 35,
-    "news": 113,
-    "trends": 33
+    "news": 86,
+    "trends": 34
   },
   {
     "date": "2026-05-11",
@@ -19,17 +19,21 @@
   },
   {
     "date": "2026-05-18",
-    "trends": 1,
+    "trends": 0,
     "ptt": 1
   },
   {
     "date": "2026-05-25",
     "trends": 1,
     "ptt": 3,
-    "news": 4
+    "news": 3
   },
   {
     "date": "2026-06-01",
-    "trends": 0
+    "trends": 1
+  },
+  {
+    "date": "2026-06-08",
+    "trends": 1
   }
 ]
